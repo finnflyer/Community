@@ -1,5 +1,6 @@
 ### Learning Community Code 
 
+<<<<<<< HEAD
 ## Quick Start
 1. Install tools for this project 
 JDK,Maven, IDEA
@@ -9,6 +10,9 @@ JDK,Maven, IDEA
 
 ##  Sources
 
+=======
+##  Sources
+>>>>>>> deedec287d43939bd2b392038bb8dd9847e09f2d
 [Spring 文档](https://spring.io/guides)    
 [Spring Web](https://spring.io/guides/gs/serving-web-content/)   
 
