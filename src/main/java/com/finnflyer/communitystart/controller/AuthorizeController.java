@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class AuthorizeController {
 
@@ -25,7 +27,8 @@ public class AuthorizeController {
     private String redirect_uri;
 
     @GetMapping("/callback")
-    public String callback(@RequestParam(name="code") String code
+    public String callback(@RequestParam(name="code") String code,
+                                        HttpServletRequest request
                                          ){
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
         accessTokenDTO.setCode(code);
@@ -35,7 +38,15 @@ public class AuthorizeController {
         accessTokenDTO.setClient_secret(client_secret);
         String accessToken = giteeProvider.getAccessToken(accessTokenDTO);
         GiteeUser user = giteeProvider.getUser(accessToken);
-        System.out.println(user.getName());
-        return "redirect:/";
+        if (user != null) {
+            //login successfully  write cookie & session
+            request.getSession().setAttribute("user",user);
+            return "redirect:/";
+
+        }else {
+            //Relogin
+            return "redirect:/" ;
+        }
+
     }
 }
