@@ -17,4 +17,19 @@ JDK,Maven, IDEA
 
 ## Tools
 [Git](https://git-scm.com/download)   
-[Visual Paradigm](https://www.visual-paradigm.com)    
+[Visual Paradigm](https://www.visual-paradigm.com)
+
+## Sql
+```$xslt
+create table USER
+(
+	ID INTEGER default auto_increment,
+	ACCOUNT_ID VARCHAR(100),
+	NAME VARCHAR(50),
+	TOKEN CHAR(36),
+	GMT_CREATE BIGINT,
+	GMT_MODIFIED BIGINT,
+	constraint USER_PK
+		primary key (ID)
+);
+```    
