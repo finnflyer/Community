@@ -13,7 +13,7 @@ JDK,Maven, IDEA
 [Github deploy key](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys)    
 [Bootstrap](https://v3.bootcss.com/getting-started/)    
 [Github OAuth](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)    
-
+[Gitee OAuth](https://gitee.com/api/v5/oauth_doc#/)
 
 ## Tools
 [Git](https://git-scm.com/download)   
